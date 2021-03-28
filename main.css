@@ -1,12 +1,46 @@
 .header {
-    padding-bottom: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .header > h3, h5 {
     margin: 0;
     padding-top: 20px;
     text-align: center;
+}
+
+#answers {
+    margin: 10px;
+    padding: 40px;
+    text-align: left;
+}
+
+#colors{
+    padding-left: 150px;
+    padding-bottom: 10px;
+}
+
+#title_color{
+    padding-bottom: 8px;
+}
+
+#hint{
+    padding-left: 180px;
+    padding-bottom: 15px;
+    font-size:11px;
+}
+
+.tooltip {
+    position: center;
+    font-size: 11px;
+    min-width: 60px;
+    padding: 10px;
+    width:  auto;
+    height: auto;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
 }
 
 /* Include any custom CSS styling here! */

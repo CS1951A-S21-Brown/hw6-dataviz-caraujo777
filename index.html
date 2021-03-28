@@ -2,27 +2,76 @@
 <html lang="en">
 <head>
         <meta charset="utf-8">
-        <title>Assignment 6 &laquo; Data Visualization Dashboard&raquo;</title>
+        <title>International Football Games</title>
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="main.css"/>
         <!--Feel free to add more CSS files as needed-->
-        <script type="text/javascript" src="https://d3js.org/d3.v5.min.js"></script>
+        <script type="text/javascript" src="https://d3js.org/d3.v5.js"></script>
     </head>
 <body>
     <div class="header">
-        <h3>Assignment 6 &laquo; Data Visualization Dashboard &raquo;</h3>
+        <h3>International Football Games</h3>
     </div>
     <!--  We included a basic HTML structure for the 3 graphs here. Feel free to change this if you'd like  -->
     <div class="row">
+            <div id=colors>
+                    <div id=title_color> <br>Choose Graph Colors! </br> </div>
+                        <label for="choose_color_1">Color 1:</label>
+                        <input type="color" id="choose_color_1" value="#66a0e2" oninput="updateColor();updateColor2();updateColor3()">
+                        <label for="choose_color_2">Color 2:</label>
+                        <input type="color" id="choose_color_2" value="#81c2c3" oninput="updateColor2();updateColor3()">
+                    </div>
         <div class="col-lg-6">
             <div id="graph1"></div>
             <div id="graph2"></div><br/>
         </div>
         <div class="col-lg-6">
+                <div id=hint> <br>Hint: hover over a team to see their performance breakdown </br> </div>
             <div id="graph3"></div>
         </div>
     </div>
+
+<div id="answers">
+    <br>Written Questions</br>  
+    <br>1. My dashboard contains three graphs that answer the three questions in order. 
+
+    The first graph is a line graph that displays how many football games were played per year in the past 100 years.
+    
+    The second graph displays a winning percentage for the top 10 nations, considering the number of games they won out of all the games they ever played. Here, it's also important to note that I only considered nations that had played more than 400 games, so that we don't have countries that played very few games and happened to win them be considered "winning nations". 
+    
+    The third graph displays the top 15 top-performing countries in the previous two world cups. I interpreted "top-performing" as having played the most games combined in both world cups because during the world cup, the further you advance in the championship, the more games you play: 3 games for Group Stage, 4 games for Best-of-16, 5 games for Best-of-8, 6 games for Semifinals, and 7 games for Semifinals or Finals (since the losing teams in the semifinals play again to decide on the third place). My third graph also contains tooltips that describe how far each of the teams reached in each of the two world cups (2014 and 2018).
+    </br>  
+
+<br>2. D3 was helpful because it:
+1) Made it able to process large amounts of data very quickly, for example the number of games per year for 100 years' worth of data
+
+2) Made it easy to customize the graphs and their appearance for a better visual experience, for example in my dashboard when customizing the gradient colors for the bar graphs and the stoke color for the line graph
+
+3) Because D3 is one of the most used graphing tools, there are many resources online that explain how this library works, which was helpful when trying to create and customize my own graphs.
+</br>
+
+<br>3. D3 might not be the best tool to create visualizations because:
+
+1) It requires a lot of data preparation and preprocessing so that the graphs work correctly
+
+2) It is difficult to debug, since the only way to find out why a graph is not working correctly is printing information to the console
+
+3) In my opinion, D3 has a steep learning curve. It is not intuitive to understand each of the parameters for different kinds of graphs, and how to modify different components to match one's needs.
+</br>
+
+<br>4. Some of the users that might benefit from my dashboard are people with epilepsy, ADHD, or cognitive disabilities, since I do not have any animations (“Why Accessibility Is at the Heart of Data Visualization"); and people with colorblindness, since the gradient and stroke colors of my graphs are customizable, so users can choose two colors that have high contrast to enhance their visual experience. Some of the changes I could include are removing my hover overlay, which I learned is impossible to use with most assistive technologies; as well as adding a description to each graph so that people with visual impairments can understand what they represent ("A Comprehensive Guide to Accessible Data Visualization").
+</br>
+
+<br>5. One thing I could have done was not using a hover overlay, and I decided to use it because we had already done a similar thing in the lab so I knew how to create it, while I was not sure how to make that information visible at all times in the graph for each data point, so it would take me longer to learn how to. I could have also added descriptions to each of my data points and a short description of each graph, which I did not do because I decided to focus on completing the other sections of the project instead. Looking back, I realize many of my decisions were made with a focus on finishing the project as fast as possible, even though some of these changes would only take a few more minutes to implement. That made me aware of how these decisions are made in the real world harming people with accessibility needs, and how important it is to make accessibility a requirement to every project, and not an additional feature.
+</br>
+
+
+</div>
+</div>
+
     <!--Feel free to add more JavaScript files as needed-->
     <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="graph_2.js"></script>
+    <script type="text/javascript" src="graph_3.js"></script>
 </body>
 </html>
